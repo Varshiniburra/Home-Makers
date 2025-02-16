@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Responsive App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: #DBAE58;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .header-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-right input[type="text"] {
+            padding: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .header-right .icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .home-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .home-section h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .home-section p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .home-images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .home-images img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .home-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .category {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+.hidden {
+            display: none;
+        }
+
+        .profile-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .profile-container button {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: #DBAE58;
+            border: none;
+            color: black;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #DBAE58;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.8rem 0;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        footer a span {
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 1.2rem;
+            }
+
+            .header-right input[type="text"] {
+                width: 100px;
+            }
+
+            footer a {
+                font-size: 0.9rem;
+            }
+
+            .home-images img {
+                width: 150px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="menu-icon">☰</span>
+        </div>
+        <h1 class="header-title">HOME MAKERS</h1>
+        <div class="header-right">
+          <input type="text" placeholder="Search...">
+            <span class="icon">🔍</span>
+            <span class="icon">❤</span>
+            <span class="icon">🛒</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Content -->
+        <div id="home-section" class="home-section">
+            <h2>Welcome to Home Makers</h2>
+            <p>Explore the best products for your home!</p>
+
+            <!-- Home Images -->
+            <div class="home-images">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/v1738045068/home1_ipzrz8.png" alt="Cakes">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/v1738045075/home2_l03wub.jpg" alt="Chocolates">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/v1738045086/home3_c3r9dr.jpg">
+            </div>
+        </div>
+
+        <!-- Categories Section, initially hidden -->
+        <div id="categories-section" class="categories hidden">
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/v1738043137/cakes_iiunpf.jpg" alt="Cakes">
+                Cakes
+            </div>
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738043239/choclates_jzxvmd.jpg" alt="Chocolates">
+                Chocolates
+            </div>
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738043361/soaps_teovkt.jpg" alt="Soaps">
+                Soaps
+            </div>
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/v1738043849/paperplates_hmcojm.webp" alt="Paper Plates">
+                Paper Plates
+            </div>
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738043862/liquids_si9hr2.jpg" alt="Liquids">
+                Liquids
+            </div>
+            <div class="category">
+                <img src="https://res.cloudinary.com/dffd9xqel/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738043871/incensesticks_suit0d.jpg" alt="Incense Sticks">
+                Incense Sticks
+            </div>
+        </div>
+      
+      <!-- Delivery & Payment Section -->
+<div id="payment-section" class="payment-section hidden">
+    <h2 style="text-align: center;">Payment Options</h2>
+    <div style="max-width: 400px; margin: auto; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+       
+        <div style="border: 1px solid #ccc; padding: 1rem; border-radius: 8px;">
+            <label>
+                <input type="radio" name="payment-method" checked>💳 Credit & Debit Cards
+            </label>
+            <br><br>
+
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="Enter Name" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+
+            <label>Card Number</label>
+            <input type="text" placeholder="xxxx xxxx xxxx xxxx" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <div style="flex: 1;">
+                    <label>End Date</label>
+                    <input type="text" placeholder="MM/YY" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="flex: 1;">
+                    <label>CVV</label>
+                    <input type="text" placeholder="XXX" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+
+            <label>
+                <input type="checkbox" checked> I accept the terms and privacy policy
+            </label>
+            <br><br>
+
+            <button style="width: 100%; padding: 0.7rem; background-color: red; color: white; border: none; border-radius: 4px; cursor: pointer;">Pay Now</button>
+        </div>
+
+        <br>
+        <label>
+            <input type="radio" name="payment-method">🏦 Net Banking (Free of charge)
+        </label>
+       <br>
+        <label>
+            <input type="radio" name="payment-method">👛 Wallets
+        </label>
+      <br>
+        <label>
+            <input type="radio" name="payment-method">📲 UPI
+        </label>
+      <br>
+        <label>
+            <input type="radio" name="payment-method">💵 Cash On Delievery
+        </label>
+      
+    </div>
+      </div>
+       <!-- Profile Section --> 
+      <div id="profile-section" class="profile-section hidden">
+            <h2>Profile</h2>
+            <div class="profile-container">
+                <button id="continue-email">📧 Continue with Email</button>
+                <div id="register-form" class="hidden">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <label><input type="checkbox"> I agree to the Terms & Conditions</label>
+                    <button>Register</button>
+                </div>
+                <hr>
+                <button id="login-button">Login to an Existing Account</button>
+                <div id="login-form" class="hidden">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button>Login</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#" id="home-link">
+            🏠<br>
+            <span>Home</span>
+        </a>
+        <a href="#" id="categories-link">
+            📂<br>
+            <span>Categories</span>
+        </a>
+        <a href="#" id="delivery-link">
+    🚀<br>
+    <span>Delivery & Payment</span>
+</a>
+        <a href="#" id="profile-link">
+            👤<br>
+            <span>Profile</span>
+        </a>
+    </footer>
+
+    <script>
+     
+        // Get elements for navigation
+        const homeLink = document.getElementById('home-link');
+        const categoriesLink = document.getElementById('categories-link');
+        const homeSection = document.getElementById('home-section');
+        const categoriesSection = document.getElementById('categories-section');
+      const deliveryLink = document.getElementById('delivery-link');
+    const paymentSection = document.getElementById('payment-section');
+
+        // Show the home section and hide the categories section
+        homeLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            homeSection.style.display = 'block'; // Show home section
+            categoriesSection.style.display = 'none'; // Hide categories section
+        });
+
+        // Show the categories section and hide the home section
+        categoriesLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            categoriesSection.style.display = 'flex'; // Show categories section
+            homeSection.style.display = 'none'; // Hide home section
+        });
+      deliveryLink.addEventListener('click', (event) => {
+     event.preventDefault(); // Prevent default link behavior
+     // Hide all sections
+     homeSection.style.display = 'none';
+     categoriesSection.style.display = 'none';
+     document.getElementById('profile-section').style.display = 'none';
+     
+     // Show only the payment section
+     paymentSection.style.display = 'block';
+ });
+       document.getElementById('profile-link').addEventListener('click', (event) => {
+    event.preventDefault();
+    
+    // Hide all sections
+    homeSection.style.display = 'none';
+    categoriesSection.style.display = 'none';
+    paymentSection.style.display = 'none';
+    
+    // Show only the profile section
+    document.getElementById('profile-section').style.display = 'block';
+});
+
+        document.getElementById('continue-email').addEventListener('click', () => {
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+        });
+
+        document.getElementById('login-button').addEventListener('click', () => {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+    </script>
+   <style>
+        /* Hide the categories section by default */
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+</html>
